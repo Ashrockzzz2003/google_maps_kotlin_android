@@ -71,5 +71,17 @@
         android:tooltipText="@string/add_marker_button_text"
         app:icon="@drawable/googleg_standard_color_18" />
 
+    <Spinner
+        android:id="@+id/mapTypeSpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="11dp"
+        android:background="@drawable/spinner_background"
+        android:padding="6dp"
+        android:spinnerMode="dropdown" />
 
 </FrameLayout>

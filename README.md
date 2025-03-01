@@ -7,7 +7,7 @@ This repo is to explore the Google Maps SDK for Android by trying it out in an A
 
 ## Demo
 
-https://github.com/user-attachments/assets/603e6a89-bb99-4b31-a911-728d80e33f7f
+https://github.com/user-attachments/assets/fcbb94d2-04a1-4acc-97eb-a0485ce6f1fa
 
 ## Features Implemented
 
@@ -19,3 +19,4 @@ https://github.com/user-attachments/assets/603e6a89-bb99-4b31-a911-728d80e33f7f
 - [x] Remove added markers after a confirmation on clicking a marker. 
 - [x] Get current live location(GPS) and show in map.
 - [x] Request permission for current location(GPS).
+- [x] 3 different map views available. (Normal, Terrain, Satellite).

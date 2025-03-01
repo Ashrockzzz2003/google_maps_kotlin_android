@@ -6,8 +6,11 @@ import android.content.pm.PackageManager
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Spinner
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
@@ -93,6 +96,26 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback {
         fabAddMarker.setOnClickListener {
             isCardVisible = !isCardVisible
             updateAddMarkerCardVisibility()
+        }
+
+        // Used to choose between 3 map types: Normal, Terrain, Satellite
+        val mapTypeSpinner: Spinner = findViewById(R.id.mapTypeSpinner)
+        val mapTypes = arrayOf("Normal  ", "Terrain  ", "Satellite")
+        val adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, mapTypes)
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        mapTypeSpinner.adapter = adapter
+
+        mapTypeSpinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View, position: Int, id: Long) {
+                when (position) {
+                    0 -> mMap.mapType = GoogleMap.MAP_TYPE_NORMAL
+                    1 -> mMap.mapType = GoogleMap.MAP_TYPE_TERRAIN
+                    2 -> mMap.mapType = GoogleMap.MAP_TYPE_HYBRID
+                }
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>) {
+            }
         }
 
     }
